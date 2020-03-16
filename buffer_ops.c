@@ -10,9 +10,9 @@
  */
 size_t buf_size(buffer *buf)
 {
-  if (!buf)
-    return (0);
-  return (buf->size);
+	if (!buf)
+		return (0);
+	return (buf->size);
 }
 
 /**
@@ -23,9 +23,9 @@ size_t buf_size(buffer *buf)
  */
 size_t buf_index(buffer *buf)
 {
-  if (!buf)
-    return (0);
-  return (buf->index);
+	if (!buf)
+		return (0);
+	return (buf->index);
 }
 
 /**
@@ -36,23 +36,23 @@ size_t buf_index(buffer *buf)
  */
 char *buf_content(buffer *buf)
 {
-  unsigned int i;
-  char *copy;
+	unsigned int i;
+	char *copy;
 
-  if (!buf)
-    return (NULL);
+	if (!buf)
+		return (NULL);
 
-  copy = malloc(sizeof(char) * buf->size + 1);
-  if (!copy)
-    return (NULL);
-  i = 0;
-  while (i < buf->index)
-    {
-      copy[i] = buf->str[i];
-      i++;
-    }
-  copy[i] = '\0';
-  return (copy);
+	copy = malloc(sizeof(char) * buf->size + 1);
+	if (!copy)
+		return (NULL);
+	i = 0;
+	while (i < buf->index)
+	{
+		copy[i] = buf->str[i];
+		i++;
+	}
+	copy[i] = '\0';
+	return (copy);
 }
 
 /**
@@ -61,9 +61,9 @@ char *buf_content(buffer *buf)
  */
 void buf_write(buffer *buf)
 {
-  if (!buf)
-    return;
-  write(1, buf->str, buf->index);
+	if (!buf)
+		return;
+	write(1, buf->str, buf->index);
 }
 
 /**
@@ -72,9 +72,9 @@ void buf_write(buffer *buf)
  */
 void buf_wr(buffer *buf)
 {
-  if (!buf || (buf->index <= buf->size))
-    return;
-  buf_write(buf);
-  buf->index = 0;
-  buf->str[0] = '\0';
+	if (!buf || (buf->index <= buf->size))
+		return;
+	buf_write(buf);
+	buf->index = 0;
+	buf->str[0] = '\0';
 }

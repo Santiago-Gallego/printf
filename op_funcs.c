@@ -9,13 +9,13 @@
  */
 int write_char(buffer *buf, va_list v_ls)
 {
-  char v_temp = va_arg(v_ls, int);
+	char v_temp = va_arg(v_ls, int);
 
-  buf_wr(buf);
-  buf->str[buf->index] = v_temp;
-  buf_inc(buf);
-  buf->str[buf->index] = '\0';
-  return (1);
+	buf_wr(buf);
+	buf->str[buf->index] = v_temp;
+	buf_inc(buf);
+	buf->str[buf->index] = '\0';
+	return (1);
 }
 
 /**
@@ -26,19 +26,19 @@ int write_char(buffer *buf, va_list v_ls)
  */
 int write_str(buffer *buf, va_list v_ls)
 {
-  int i;
-  char *v_temp = va_arg(v_ls, char *);
+	int i;
+	char *v_temp = va_arg(v_ls, char *);
 
-  if (v_temp == NULL)
-    v_temp = "(null)";
-  for (i = 0; v_temp[i]; i++)
-    {
-      buf_wr(buf);
-      buf->str[buf->index] = v_temp[i];
-      buf_inc(buf);
-    }
-  buf->str[buf->index] = '\0';
-  return (1);
+	if (v_temp == NULL)
+		v_temp = "(null)";
+	for (i = 0; v_temp[i]; i++)
+	{
+		buf_wr(buf);
+		buf->str[buf->index] = v_temp[i];
+		buf_inc(buf);
+	}
+	buf->str[buf->index] = '\0';
+	return (1);
 }
 
 /**
@@ -49,13 +49,13 @@ int write_str(buffer *buf, va_list v_ls)
  */
 int write_mod(buffer *buf, va_list v_ls)
 {
-  (void)v_ls;
+	(void)v_ls;
 
-  buf_wr(buf);
-  buf->str[buf->index] = '%';
-  buf_inc(buf);
-  buf->str[buf->index] = '\0';
-  return (1);
+	buf_wr(buf);
+	buf->str[buf->index] = '%';
+	buf_inc(buf);
+	buf->str[buf->index] = '\0';
+	return (1);
 }
 
 /**
@@ -66,27 +66,27 @@ int write_mod(buffer *buf, va_list v_ls)
  */
 int write_int(buffer *buf, va_list v_ls)
 {
-  int num;
-  unsigned int unum;
+	int num;
+	unsigned int unum;
 
-  num = va_arg(v_ls, int);
-  unum = num;
-  if (num == 0)
-    {
-      buf->str[buf->index] = '0';
-      buf_inc(buf);
-      return (1);
-    }
-  else if (num < 0)
-    {
-      buf->str[buf->index] = '-';
-      buf_inc(buf);
-      unum = -num;
-    }
+	num = va_arg(v_ls, int);
+	unum = num;
+	if (num == 0)
+	{
+		buf->str[buf->index] = '0';
+		buf_inc(buf);
+		return (1);
+	}
+	else if (num < 0)
+	{
+		buf->str[buf->index] = '-';
+		buf_inc(buf);
+		unum = -num;
+	}
 
-  buf_wr(buf);
-  append_num(buf, unum);
-  return (1);
+	buf_wr(buf);
+	append_num(buf, unum);
+	return (1);
 }
 
 /**
@@ -97,11 +97,11 @@ int write_int(buffer *buf, va_list v_ls)
  */
 void append_num(buffer *buf, unsigned int num)
 {
-  if (num == 0)
-    return;
+	if (num == 0)
+		return;
 
-  buf_wr(buf);
-  append_num(buf, num / 10);
-  buf->str[buf->index] = (num % 10) + '0';
-  buf_inc(buf);
+	buf_wr(buf);
+	append_num(buf, num / 10);
+	buf->str[buf->index] = (num % 10) + '0';
+	buf_inc(buf);
 }

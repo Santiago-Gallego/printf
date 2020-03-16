@@ -6,8 +6,8 @@
  */
 void buf_inc(buffer *buf)
 {
-  if (!buf)
-    return;
-  buf->index++;
-  buf->overflow++;
+	if (!buf)
+		return;
+	buf->index++;
+	buf->overflow++;
 }

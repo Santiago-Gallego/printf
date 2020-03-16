@@ -24,10 +24,10 @@
  */
 typedef struct print_buffer
 {
-  size_t index;
-  size_t size;
-  size_t overflow;
-  char *str;
+	size_t index;
+	size_t size;
+	size_t overflow;
+	char *str;
 } buffer;
 
 buffer *buf_new();
@@ -47,8 +47,8 @@ void buf_inc(buffer *);
  */
 typedef struct print_ops
 {
-  char *op;
-  int (*fn)(buffer *, va_list);
+	char *op;
+	int (*fn)(buffer *, va_list);
 } prtOp;
 
 prtOp *prtOp_init();
@@ -56,8 +56,6 @@ prtOp *prtOp_init();
 void append_num(buffer *buf, unsigned int num);
 
 int write_bin(buffer *buf, va_list v_ls);
-
-/* Martin Above / Samie Below */
 
 int _printf(const char *format, ...);
 
