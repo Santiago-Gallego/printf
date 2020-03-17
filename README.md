@@ -59,3 +59,7 @@ Filename | Description
 **[buffer_ops2.c](buffer_ops2.c)** | Second Buffer Options
 **[opid.c](opid.c)** | Main Structures
 **[main.c](main.c)** | Test file
+
+### Author
+
+2020 - Santiago Gallego ([Santiago-Gallego](https://github.com/Santiago-Gallego)), Juan David Suarez ([juandsuarezz](https://github.com/juandsuarezz)) at [Holberton School](https://www.holbertonschool.com/)
