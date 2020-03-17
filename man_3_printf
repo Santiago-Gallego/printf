@@ -14,7 +14,7 @@ if it is a 's' it will print a string variable.
 if it is a 'i' it will print an integer value.
 if it is a 'd' it will print a integer.
 if it is a '%' it will print a modulo.
-if it is a 'b' it will print a unsigned int convert to binary.
+if it is a 'b' it will print a unsigned int converted to binary.
 .SH RETURN
 The function will returen the number of characters printed. If unsuccessful the function will return null.
 .SH AUTHOR
