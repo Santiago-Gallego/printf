@@ -62,4 +62,6 @@ Filename | Description
 
 ### Author
 
-2020 - Santiago Gallego ([Santiago-Gallego](https://github.com/Santiago-Gallego)), Juan David Suarez ([juandsuarezz](https://github.com/juandsuarezz)) at [Holberton School](https://www.holbertonschool.com/)
+Santiago Gallego ([Santiago-Gallego](https://github.com/Santiago-Gallego)), Juan David Suarez ([juandsuarezz](https://github.com/juandsuarezz)) at [Holberton School](https://www.holbertonschool.com/)
+
+Mar - 2020
