@@ -18,7 +18,6 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 	va_start(v_ls, format);
-
 	while (format[i])
 	{
 		buf_wr(buf);
@@ -38,7 +37,6 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	buf_write(buf);
-
 	if (var >= 0)
 		i = buf->overflow;
 	buf_end(buf);
